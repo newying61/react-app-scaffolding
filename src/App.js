@@ -1,18 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+
+import Scrollable from './Components/Scrollable/Scrollable';
+
+const Items = '1234567890'.split('');
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          Component examples
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Scrollable className='images-list' length={Items.length}>
+          {Items.map((v, i) => {
+            return <img key={i} className="img-place-holder" src="https://via.placeholder.com/300x200" width="300" height="200" alt="" />;
+          })}
+        </Scrollable>
       </div>
     );
   }

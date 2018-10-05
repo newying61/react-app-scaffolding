@@ -1,0 +1,103 @@
+@keyframes arrow__animate-right {
+	0% {
+		opacity: 0;
+		transform: translateX(0);
+	}
+	30% {
+		opacity: 1;
+	}
+	70% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(110%);
+		opacity: 0;
+	}
+}
+
+@keyframes arrow__animate-left {
+	0% {
+		opacity: 0;
+		transform: translateX(0);
+	}
+	30% {
+		opacity: 1;
+	}
+	70% {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(-110%);
+		opacity: 0;
+	}
+}
+
+
+.arrow {
+	font-size: 32px;
+	width: 50px;
+	color: #fff;
+	opacity: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 2;
+	cursor: pointer;
+	touch-action: manipulation;
+	transition: transform 0.3s easeInOut, opacity 0.3s easeInOut;
+	animation-duration: 3s;
+	animation-timing-function: easeInOut;
+}
+
+	.arrow--left {
+		left: 0;
+		transform: translateX(-110%);
+		background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 10%, rgba(0, 0, 0, 0.3) 100%);
+	}
+
+	.arrow--left .arrow__icon {
+			left: 5px;
+		}
+
+
+	.arrow--right {
+		right: 0;
+		transform: translateX(110%);
+		background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 10%, rgba(0, 0, 0, 0.3) 100%);
+	}
+
+	.arrow--right .arrow__icon {
+		right: 5px;
+	}
+
+	.arrow--animate-left {
+		animation-name: arrow__animate-left;
+	}
+
+	.arrow--animate-right {
+		animation-name: arrow__animate-right;
+	}
+
+	.arrow--visible {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	.arrow__icon {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		stroke: #4d4d4d;
+		stroke-width: 1px;
+	}
+
+	.arrow__icon path {
+			fill: #fff;
+			height: 100%;
+			width: 100%;
+		}
